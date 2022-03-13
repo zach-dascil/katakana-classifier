@@ -9,69 +9,31 @@ This project explores the use of Convolution Neural Networks (CNN) to classify i
 During my trips to Japan, I would come across words I did could not comprehend, whether it was due to the lack of my vocabulary or I was unable to read the characters. I would then spend minutes trying to find the meaning of characters to then find out the meaning of the word. This project will lay the groundwork to be able to classify words using live input.
 
 ## Dataset and Implementation
+The datasets used were the ETL-1 and ETL-6 datasets from the ETL database (1) found [here](http://etlcdb.db.aist.go.jp/). The database contains 1.2 million greyscale images of handwritten and machine-generated hiragana, katakana, and kanji characters of various resolutions. The two datasets I used have around 2,800 images of each katakana character with the resolution of 63x64. Each dataset was in different binary formats but, an image extractor was created by choo (2) which can be found [here](https://github.com/choo/etlcdb-image-extractor). A sample of the images can be seen below.
 
+![Image]()
 
+The images were sorted by their unicode and placed into their respective folders. A method to transform these folders into a dataset was created by Utkarsh Garg which can be found [here](towardsdatascience.com/custom-dataset-in-pytorch-part-1-images-2df3152895) however, for my project, some modules were changed and some of the code was modified to better fit my design.
 
+## Models
 
+For my CNN models, I used Pytorch and used Pytorch's nn's Sequential function to organize my models. I used the optimizer Adam with a learning rate of 0.0001 and the CrossEntropyLoss function for all of my models. All models trained for 100 epochs except for my first model which trained for 40 epochs due to overfitting issues. With the exception of the final fully-connected layer, all fully-connected layers had a dropout rate of 50% while convolution layers had a dropout rate of 15% to prevent overfitting. Finally the activation functions for all the layers were ReLU with the exception of the output layer using LogSoftMax.
 
-
-
-
-
-
-
-
-
+For my first model, I created a basic CNN which used the following layers:
+```markdown
+        Conv2d(1,32,5)
+        ReLU()
+        Dropout(p=.15)
+        MaxPool2d(2)
+        Flatten()
+        Linear(27840,46)
+        LogSoftmax(dim=1)
+```
 
 ## References
 
-ETL Database: http://etlcdb.db.aist.go.jp/
+(1) _National Institute of Advanced Industrial Science and Technology (AIST), and Japan Electronics and Information Technology Industries Association. “Etlcdb.” Etlcdb, etlcdb.db.aist.go.jp/. Accessed 13 Mar. 2022._
 
+(2) _choo. “ETLCDB Image Extractor.” GitHub, 16 July 2021, github.com/choo/etlcdb-image-extractor. Accessed 13 Mar. 2022._
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-You can use the [editor on GitHub](https://github.com/zetazach/katakana-classifier/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-
+(3) _Garg, Utkarsh. “Custom Dataset in Pytorch —Part 1. Images.” Medium, 2 Oct. 2021, towardsdatascience.com/custom-dataset-in-pytorch-part-1-images-2df3152895. Accessed 13 Mar. 2022._
