@@ -19,16 +19,45 @@ The images were sorted by their unicode and placed into their respective folders
 
 For my CNN models, I used Pytorch and used Pytorch's nn's Sequential function to organize my models. I used the optimizer Adam with a learning rate of 0.0001 and the CrossEntropyLoss function for all of my models. All models trained for 100 epochs except for my first model which trained for 40 epochs due to overfitting issues. With the exception of the final fully-connected layer, all fully-connected layers had a dropout rate of 50% while convolution layers had a dropout rate of 15% to prevent overfitting. Finally the activation functions for all the layers were ReLU with the exception of the output layer using LogSoftMax.
 
-For my first model, I created a basic CNN which used the following layers:
-```markdown
-        Conv2d(1,32,5)
-        ReLU()
-        Dropout(p=.15)
-        MaxPool2d(2)
-        Flatten()
-        Linear(27840,46)
-        LogSoftmax(dim=1)
-```
+Below I showcase a couple of my implementations:
+
+
+Basic Model
+|Layer|Activation Function|Dropout Rate|
+|:-----------|:-------------------:|:---------------------:|
+|Conv2d(1,32,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Flatten()|||
+|Linear(27840,46)|LogSoftmax(dim=1)||
+
+Densest Model
+|Layer|Activation Function|Dropout Rate|
+|:-----------|:-------------------:|:---------------------:|
+|Conv2d(1,32,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Conv2d(32,64,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Conv2d(64,128,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Flatten()|||
+|Linear(2048,512)|ReLU|0.5|
+|Linear(512,128)|ReLU|0.5|
+|Linear(128,46)|LogSoftmax(dim=1)||
+
+Conv 22 Model
+|Layer|Activation Function|Dropout Rate|
+|:-----------|:-------------------:|:---------------------:|
+|Conv2d(1,32,5)|ReLU|0.15|
+|Conv2d(32,32,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Conv2d(32,64,5)|ReLU|0.15|
+|Conv2d(64,64,5)|ReLU|0.15|
+|MaxPool2d(2)|||
+|Flatten()|||
+|Linear(2048,512)|ReLU|0.5|
+|Linear(512,128)|ReLU|0.5|
+|Linear(128,46)|LogSoftmax(dim=1)||
+
 For the next four models, more convolution and fully-connected layers were added with the largest model having 4 convolution layers and 3 fully-connected layers.
 
 The last model was loosely based LeNet-5 model implemented by Nouman (4) found [here](https://blog.paperspace.com/writing-lenet5-from-scratch-in-python/).
@@ -44,7 +73,7 @@ To measure the accuracy of my models, I took the percentage, rounded to decimal 
 |Complex|97.51%|95.72%|96.60%|
 |Complex Denser|94.29%|92.06%|93.21%|
 |Complex Densest|99.64%|98.65%|99.09%|
-|Conv 2|99.63%|98.55%|99.16%|
+|Conv 22|99.63%|98.55%|99.16%|
 
 Below is a graph of Complex Densest's relationship between epochs and accuracy.
 
