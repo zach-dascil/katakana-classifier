@@ -23,6 +23,7 @@ Below I showcase a couple of my implementations:
 
 
 Basic Model
+
 | Layer |Activation Function |Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
@@ -31,6 +32,7 @@ Basic Model
 |Linear(27840,46)|LogSoftmax(dim=1)||
 
 Densest Model
+
 | Layer | Activation Function | Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
@@ -45,6 +47,7 @@ Densest Model
 |Linear(128,46)|LogSoftmax(dim=1)|  |
 
 Conv 22 Model
+
 | Layer | Activation Function | Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
