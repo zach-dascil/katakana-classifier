@@ -11,7 +11,7 @@ During my trips to Japan, I would come across words I did could not comprehend, 
 ## Dataset and Implementation
 The datasets used were the ETL-1 and ETL-6 datasets from the ETL database (1) found [here](http://etlcdb.db.aist.go.jp/). The database contains 1.2 million greyscale images of handwritten and machine-generated hiragana, katakana, and kanji characters of various resolutions. The two datasets I used have around 2,800 images of each katakana character with the resolution of 63x64. Each dataset was in different binary formats but, an image extractor was created by choo (2) which can be found [here](https://github.com/choo/etlcdb-image-extractor). A sample of the images can be seen below.
 
-![Image]()
+![Image](https://github.com/zach-dascil/katakana-classifier/blob/gh-pages/assets/random_katakana.png?raw=true)
 
 The images were sorted by their unicode and placed into their respective folders. A method to transform these folders into a dataset was created by Utkarsh Garg which can be found [here](towardsdatascience.com/custom-dataset-in-pytorch-part-1-images-2df3152895) however, for my project, some modules were changed and some of the code was modified to better fit my design.
 
@@ -48,9 +48,17 @@ To measure the accuracy of my models, I took the percentage, rounded to decimal 
 
 Below is a graph of Complex Densest's relationship between epochs and accuracy.
 
-![Image]()
+![Image](https://github.com/zach-dascil/katakana-classifier/blob/gh-pages/assets/cnn%20densest.png?raw=true)
 
 Based on the testing accuracies, the amount of convolution layers play a larger role with the accuracy than the fully-connected as seen with the Complex Densest and Conv 2 models which had 3 and 4 convolution layers respectively. It appears that there is diminishing returns after the third convolution layers which brings up the trade-off between number of convolution layers and time when other methods of increasing accuracy exist such as hyperparameter tuning.
+
+## Final Thoughts and Project's Future
+
+Going through the process of working on this project, I gained a better understanding of the use of CNNs and its strengths and weaknesses. While accuracy increases with more convolution layers, the training time also increases. Also, the resolution of the photos need to be constant to transition from a convolution layer to the fully-connected layer.
+
+In the future,the project will be able to accept photos of multiple resolutions by resizing photos and filling and padding any potential empty space. Another plan down the is to make the models more robust by applying random transformations to the images such as color and affine transformations. Eventually, the same process will happen upon the other two Japanese alphabets and I can move on to more complex parts of this project.
+
+I am glad I started working on this project and it is far from over.
 
 ## References
 
