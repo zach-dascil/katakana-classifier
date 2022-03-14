@@ -21,7 +21,6 @@ For my CNN models, I used Pytorch and used Pytorch's nn's Sequential function to
 
 Below I showcase a couple of my implementations:
 
-
 Basic Model
 
 | Layer |Activation Function |Dropout Rate |
@@ -46,7 +45,7 @@ Densest Model
 |Linear(512,128)|ReLU|0.5|
 |Linear(128,46)|LogSoftmax(dim=1)|  |
 
-Conv 22 Model
+Conv22 Model
 
 | Layer | Activation Function | Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
@@ -76,7 +75,7 @@ To measure the accuracy of my models, I took the percentage, rounded to decimal 
 |Complex|97.51%|95.72%|96.60%|
 |Complex Denser|94.29%|92.06%|93.21%|
 |Complex Densest|99.64%|98.65%|99.09%|
-|Conv 22|99.63%|98.55%|99.16%|
+|Conv22|99.63%|98.55%|99.16%|
 
 Below is a graph of Complex Densest's relationship between epochs and accuracy.
 
