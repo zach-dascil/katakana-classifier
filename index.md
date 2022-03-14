@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project explores the use of Convolution Neural Networks (CNN) to classify images of handwritten Japanese Katakana characters. Six different CNN models were used to classify the 46 main Katakana characters, exluding the characters with dakuten (◌゙) and handakuten (◌゚). The most accurate model achieved a testing accuracy of 99.15%. A video summary of the project can be found [here](https://youtu.be/RSz3cVdbDwY). For a similar experiment, check out this report (1) by Charlie Tsai.
+This project explores the use of Convolution Neural Networks (CNN) to classify images of handwritten Japanese Katakana characters. Six different CNN models were used to classify the 46 main Katakana characters, exluding the characters with dakuten (◌゙) and handakuten (◌゚). The most accurate model achieved a testing accuracy of 99.15%. A video summary of the project can be found [here](https://youtu.be/RSz3cVdbDwY). For a similar experiment, check out [this report](http://cs231n.stanford.edu/reports/2016/pdfs/262_Report.pdf) (1) by Charlie Tsai.
 
 ## Problem and Motivation
 
