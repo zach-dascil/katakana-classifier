@@ -23,40 +23,40 @@ Below I showcase a couple of my implementations:
 
 
 Basic Model
-|Layer|Activation Function|Dropout Rate|
+| Layer |Activation Function |Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
-|MaxPool2d(2)|||
-|Flatten()|||
+|MaxPool2d(2)|  |  |
+|Flatten()|  |  |
 |Linear(27840,46)|LogSoftmax(dim=1)||
 
 Densest Model
-|Layer|Activation Function|Dropout Rate|
+| Layer | Activation Function | Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
-|MaxPool2d(2)|||
+|MaxPool2d(2)|  |  |
 |Conv2d(32,64,5)|ReLU|0.15|
-|MaxPool2d(2)|||
+|MaxPool2d(2)|  |  |
 |Conv2d(64,128,5)|ReLU|0.15|
-|MaxPool2d(2)|||
-|Flatten()|||
+|MaxPool2d(2)|  |  |
+|Flatten()|  |  |
 |Linear(2048,512)|ReLU|0.5|
 |Linear(512,128)|ReLU|0.5|
-|Linear(128,46)|LogSoftmax(dim=1)||
+|Linear(128,46)|LogSoftmax(dim=1)|  |
 
 Conv 22 Model
-|Layer|Activation Function|Dropout Rate|
+| Layer | Activation Function | Dropout Rate |
 |:-----------|:-------------------:|:---------------------:|
 |Conv2d(1,32,5)|ReLU|0.15|
 |Conv2d(32,32,5)|ReLU|0.15|
-|MaxPool2d(2)|||
+|MaxPool2d(2)|  |  |
 |Conv2d(32,64,5)|ReLU|0.15|
 |Conv2d(64,64,5)|ReLU|0.15|
-|MaxPool2d(2)|||
-|Flatten()|||
+|MaxPool2d(2)|  |  |
+|Flatten()|  |  |
 |Linear(2048,512)|ReLU|0.5|
 |Linear(512,128)|ReLU|0.5|
-|Linear(128,46)|LogSoftmax(dim=1)||
+|Linear(128,46)|LogSoftmax(dim=1)|  |
 
 For the next four models, more convolution and fully-connected layers were added with the largest model having 4 convolution layers and 3 fully-connected layers.
 
