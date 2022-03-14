@@ -37,7 +37,7 @@ The last model was loosely based LeNet-5 model implemented by Nouman (4) found [
 
 To measure the accuracy of my models, I took the percentage, rounded to decimal places, of the amount of images the models correctly predicted, based on the label with the highest probablity, divided by the total amount of pictures viewed.
 
-| Model name | Training Accuracy | Validation Accuracy | Testing Accuracy |
+| Model Name | Training Accuracy | Validation Accuracy | Testing Accuracy |
 |:-----------|:-------------------:|:---------------------:|:------------------:|
 |LeNet-5|92.41%|91.25%|92.62%|
 |Basic|99.85%|92.33%|94.57%|
