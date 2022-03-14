@@ -29,6 +29,28 @@ For my first model, I created a basic CNN which used the following layers:
         Linear(27840,46)
         LogSoftmax(dim=1)
 ```
+For the next four models, more convolution and fully-connected layers were added with the largest model having 4 convolution layers and 3 fully-connected layers.
+
+The last model was loosely based LeNet-5 model implemented by Nouman (4) found [here](https://blog.paperspace.com/writing-lenet5-from-scratch-in-python/).
+
+## Results
+
+To measure the accuracy of my models, I took the percentage, rounded to decimal places, of the amount of images the models correctly predicted, based on the label with the highest probablity, divided by the total amount of pictures viewed.
+
+| Model name | Training Accuracy | Validation Accuracy | Testing Accuracy |
+|:-----------|:-------------------:|:---------------------:|:------------------:|
+|LeNet-5|92.41%|91.25%|92.62%|
+|Basic|99.85%|92.33%|94.57%|
+|Complex|97.51%|95.72%|96.60%|
+|Complex Denser|94.29%|92.06%|93.21%|
+|Complex Densest|99.64%|98.65%|99.09%|
+|Conv 2|99.63%|98.55%|99.16%|
+
+Below is a graph of Complex Densest's relationship between epochs and accuracy.
+
+![Image]()
+
+Based on the testing accuracies, the amount of convolution layers play a larger role with the accuracy than the fully-connected as seen with the Complex Densest and Conv 2 models which had 3 and 4 convolution layers respectively. It appears that there is diminishing returns after the third convolution layers which brings up the trade-off between number of convolution layers and time when other methods of increasing accuracy exist such as hyperparameter tuning.
 
 ## References
 
@@ -37,3 +59,5 @@ For my first model, I created a basic CNN which used the following layers:
 (2) _choo. “ETLCDB Image Extractor.” GitHub, 16 July 2021, github.com/choo/etlcdb-image-extractor. Accessed 13 Mar. 2022._
 
 (3) _Garg, Utkarsh. “Custom Dataset in Pytorch —Part 1. Images.” Medium, 2 Oct. 2021, towardsdatascience.com/custom-dataset-in-pytorch-part-1-images-2df3152895. Accessed 13 Mar. 2022._
+
+(4) _Nouman. “Writing LeNet5 from Scratch in PyTorch.” Paperspace Blog, 9 Jan. 2022, blog.paperspace.com/writing-lenet5-from-scratch-in-python/. Accessed 13 Mar. 2022._
