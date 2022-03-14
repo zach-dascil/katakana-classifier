@@ -92,7 +92,7 @@ In the future,the project will be able to accept photos of multiple resolutions 
 I am glad I started working on this project and it is far from over.
 
 ## References
-(1)_Tsai, Charlie. Recognizing Handwritten Japanese Characters Using Deep Convolutional Neural Networks._
+(1) _Tsai, Charlie. Recognizing Handwritten Japanese Characters Using Deep Convolutional Neural Networks._
 
 (2) _National Institute of Advanced Industrial Science and Technology (AIST), and Japan Electronics and Information Technology Industries Association. “Etlcdb.” Etlcdb, etlcdb.db.aist.go.jp/. Accessed 13 Mar. 2022._
 
